@@ -11,6 +11,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Spinner;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -20,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private ArrayAdapter listAdapter;
     private ArrayList<String> notesList;
 
-
+    Spinner deletespinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +61,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(addActivityIntent);
                 return true;
             case R.id.delete_note_activity:
+                Intent deleteActivityIntent = new Intent(getApplicationContext(), com.example.third_assignment_template.DeleteNoteActivity.class);
+                startActivity(deleteActivityIntent);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
