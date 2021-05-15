@@ -21,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
     private ArrayAdapter listAdapter;
     private ArrayList<String> notesList;
 
-    Spinner deletespinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

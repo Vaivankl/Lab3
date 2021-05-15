@@ -18,19 +18,20 @@ import java.util.Set;
 public class DeleteNoteActivity extends AppCompatActivity {
 
     Spinner deletespinner;
-    private ArrayList<String> notesList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_delete_note);
 
-        this.deletespinner = (Spinner) findViewById(R.id.deletespinner);
+        this.deletespinner = findViewById(R.id.deletespinner);
+
+
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        this.notesList = new ArrayList<String>(sp.getStringSet("notes", new HashSet<String>()));
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, notesList);
-        arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        this.deletespinner.setAdapter(arrayAdapter);
+        ArrayList<String> notesList = new ArrayList<String>(sp.getStringSet("notes", new HashSet<String>()));
+
+        ArrayAdapter listAdapter = new ArrayAdapter <>  (getApplicationContext(), android.R.layout.simple_list_item_1, notesList);
+        this.deletespinner.setAdapter(listAdapter);
 
     }
 
