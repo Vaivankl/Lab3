@@ -35,7 +35,7 @@ public class DeleteNoteActivity extends AppCompatActivity {
 
     }
 
-    public void onDeleteNoteClick (View view) {
+    public void onDelete (View view) {
         String selected = this.deletespinner.getSelectedItem().toString();
 
         //https://stackoverflow.com/questions/14034803/misbehavior-when-trying-to-store-a-string-set-using-sharedpreferences
